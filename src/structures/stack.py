@@ -17,7 +17,7 @@ class Stack(LinkedList):
         :param x: значение добавленного элемента
         :return: Ничего не возвращает
         """
-        if self.minimum_list.back() > x:
+        if self.minimum_list.is_empty() or self.minimum_list.back() > x:
             self.minimum_list.push_back(x)
         else:
             self.minimum_list.push_back(self.minimum_list.back())
@@ -46,8 +46,9 @@ class Stack(LinkedList):
         return self.minimum_list.back()
 
 
-s = Stack(4, 4, 4, 1, 1)
+s = Stack(1)
 s.pop()
-print(s)
+print(s.is_empty())
+s.push(1)
 print(s.is_empty())
 print(s.min())

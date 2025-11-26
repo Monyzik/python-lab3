@@ -2,6 +2,8 @@ import copy
 from functools import cmp_to_key
 from typing import Callable, Any, TypeVar
 
+from src.exceptions import CmpAndKeyTogetherException
+
 T = TypeVar('T')
 
 
@@ -16,7 +18,7 @@ def bubble_sort(a: list[T],
     :return: Возвращает отсортированный по ключу массив
     """
     if key is not None and cmp is not None:
-        raise ValueError("Невозможно отсортировать по cmp и key одновременно")
+        raise CmpAndKeyTogetherException(bubble_sort)
     if cmp is not None:
         key = cmp_to_key(cmp)
     if key is None:

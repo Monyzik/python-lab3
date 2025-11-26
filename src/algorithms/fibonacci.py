@@ -1,5 +1,7 @@
 from functools import lru_cache
 
+from src.exceptions import NegativeNumberException
+
 
 def matrix_multiply(a: list[list[int]], b: list[list[int]]) -> list[list[int]]:
     """
@@ -27,7 +29,7 @@ def matrix_binary_pow(a: list[list[int]], n: int) -> list[list[int]]:
     :return: Матрица a возведенная в степень n
     """
     if n <= 0:
-        raise ValueError
+        raise NegativeNumberException(matrix_multiply)
     if n == 1:
         return a
     if n % 2:
@@ -44,7 +46,7 @@ def fibo(n: int) -> int:
     :return: Число Фибоначчи
     """
     if n < 0:
-        raise ValueError
+        raise NegativeNumberException(fibo)
     if n == 0:
         return 0
     return matrix_binary_pow([[1, 1], [1, 0]], n)[0][1]
@@ -59,13 +61,9 @@ def fibo_recursive(n: int) -> int:
     :return: Число Фибоначчи
     """
     if n < 0:
-        raise ValueError
+        raise NegativeNumberException(fibo_recursive)
     if n == 0:
         return 0
     if n == 1:
         return 1
     return fibo_recursive(n - 1) + fibo_recursive(n - 2)
-
-
-print(fibo(20000))
-print(fibo_recursive(100))

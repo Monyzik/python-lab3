@@ -1,3 +1,6 @@
+from src.exceptions import NegativeNumberException
+
+
 def radix_sort(a: list[int], base: int = 10) -> list[int]:
     """
     Поразрядная сортировка (O(k * n))
@@ -6,7 +9,7 @@ def radix_sort(a: list[int], base: int = 10) -> list[int]:
     :return: Возвращает отсортированный по возрастанию массив
     """
     if base <= 0:
-        raise ValueError(f"Невозможно отсортировать с base = {base}")
+        raise NegativeNumberException(radix_sort)
     maximum = max(a)
     p = 1
     digits_plus, digits_minus = [[] for _ in range(base)], [[] for _ in range(base)]
@@ -23,4 +26,4 @@ def radix_sort(a: list[int], base: int = 10) -> list[int]:
     return a
 
 
-print(radix_sort([10000, -2, 5, 4, 3, -100, -1, 2, 1, 0, -4, -10]))
+# print(radix_sort([10000, -2, 5, 4, 3, -100, -1, 2, 1, 0, -4, -10]))

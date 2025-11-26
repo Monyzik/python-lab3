@@ -16,6 +16,6 @@ def counting_sort(a: list[int]) -> list[int]:
     return result
 
 
-print(counting_sort([-1, 10, 10, 10, 4, 5, 6, 7, 8, 7, 1, -2, -10]))
-print(counting_sort([2,0,2,1,1,0]))
+# print(counting_sort([-1, 10, 10, 10, 4, 5, 6, 7, 8, 7, 1, -2, -10]))
+# print(counting_sort([2,0,2,1,1,0]))
 

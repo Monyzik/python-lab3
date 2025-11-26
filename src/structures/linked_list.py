@@ -80,7 +80,7 @@ class LinkedList:
         self.end = self.end.previous
         if self.end is not None:
             self.end.next = None
-        if self.end is None:
+        else:
             self.start = None
         self.len -= 1
 
@@ -94,7 +94,7 @@ class LinkedList:
         self.start = self.start.next
         if self.start is not None:
             self.start.previous = None
-        if self.start is None:
+        else:
             self.end = None
         self.len -= 1
 
