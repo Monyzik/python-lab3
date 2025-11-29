@@ -33,17 +33,3 @@ def quick_sort(a: list[T],
     equal = [x for x in a if key(x) == value]
     greater = [x for x in a if key(x) > value]
     return quick_sort(less, key=key, cmp=cmp) + equal + quick_sort(greater, key=key, cmp=cmp)
-
-# print(quick_sort([10000, -2, 5, 4, 3, 2, 1, 0]))
-# print(quick_sort([(10000, -2), (5, 4), (3, 2), (1, 100)], key=lambda x: True))
-# print(sorted([(10000, -2), (5, 4), (3, 2), (1, 100)], key=lambda x: True))
-#
-#
-# def cmp(a, b):
-#     return a[1] - b[1]
-#     if a[1] == b[1]:
-#         return a[0] > b[0]
-#     return a[1] > b[1]
-#
-#
-# print(quick_sort([(10000, -2), (5, 4), (3, 2), (1, 100)], cmp=cmp))

@@ -2,6 +2,7 @@ from src.structures.linked_list import LinkedList
 
 
 class Queue(LinkedList):
+
     def enqueue(self, x: int) -> None:
         """
         Добавляет элемент в конец очереди.

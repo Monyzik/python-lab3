@@ -27,16 +27,3 @@ def heap_sort(a: list[T], key: Callable[[T], Any] | None = None, cmp: Callable[[
     for i in range(len(a)):
         answer.append(heap.extract())
     return answer
-
-
-# print(heap_sort([10000, -2, 5, 4, 3, 2, 1, 0]))
-# print(heap_sort([(10000, -2), (5, 4), (3, 2), (1, 100)], key=lambda x: (x[1], x[0])))
-#
-#
-# def cmp(a, b):
-#     if a[1] == b[1]:
-#         return a[0] > b[0]
-#     return a[1] > b[1]
-#
-#
-# print(heap_sort([(10000, -2), (5, 4), (3, 2), (1, 100)], cmp=cmp))

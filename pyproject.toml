@@ -11,3 +11,7 @@ dependencies = [
 dev-dependencies = [
     "pytest-cov>=7.0.0"
 ]
+
+[tool.coverage.report]
+show_missing = true
+fail_under = 80

@@ -1,8 +1,4 @@
-import click
-import typer
 from src.exceptions import NegativeNumberException
-
-app = typer.Typer()
 
 
 def factorial(n: int) -> int:

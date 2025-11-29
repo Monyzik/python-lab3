@@ -29,7 +29,7 @@ class Stack(LinkedList):
         :return: Ничего не возвращает
         """
         self.minimum_list.pop_back()
-        super().pop_back()
+        return super().pop_back()
 
     def peek(self) -> int:
         """
@@ -44,11 +44,3 @@ class Stack(LinkedList):
         :return: Возвращает искомый элемент
         """
         return self.minimum_list.back()
-
-
-s = Stack(1)
-s.pop()
-print(s.is_empty())
-s.push(1)
-print(s.is_empty())
-print(s.min())

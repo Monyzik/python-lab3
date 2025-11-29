@@ -77,12 +77,14 @@ class LinkedList:
         """
         if self.end is None:
             raise EmptyException(self.pop_back, self.__class__)
+        ans = self.end.value
         self.end = self.end.previous
         if self.end is not None:
             self.end.next = None
         else:
             self.start = None
         self.len -= 1
+        return ans
 
     def pop_front(self) -> T:
         """
@@ -91,12 +93,14 @@ class LinkedList:
         """
         if self.start is None:
             raise EmptyException(self.pop_front, self.__class__)
+        ans = self.start.value
         self.start = self.start.next
         if self.start is not None:
             self.start.previous = None
         else:
             self.end = None
         self.len -= 1
+        return ans
 
     def back(self) -> T:
         """

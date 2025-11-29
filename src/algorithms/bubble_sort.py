@@ -31,7 +31,3 @@ def bubble_sort(a: list[T],
             if key(result[j]) > key(result[j + 1]):
                 result[j], result[j + 1] = result[j + 1], result[j]
     return result
-
-
-print(bubble_sort([-1, 5, 4, 3, 2, 1, -2]))
-print(bubble_sort([-1, 5, 4, 3, 2, 1, -2], key=lambda x: -x))

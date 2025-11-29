@@ -30,8 +30,3 @@ def bucket_sort(a: list[float], buckets: int | None = None) -> list[float]:
         for x in bucket:
             answer.append(x)
     return answer
-
-
-# print(bucket_sort([10, 10, 10, 4, 5, 6, 7, 8, 7, 1, 10, 11]))
-# print(bucket_sort([-10000, -1, 0, 0.1, 0.2, 0.3476751, 0.347675, 1]))
-# print(bucket_sort([1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, 1], buckets=0))

@@ -14,8 +14,3 @@ def counting_sort(a: list[int]) -> list[int]:
         for j in range(counter[i]):
             result.append(i + minimum)
     return result
-
-
-# print(counting_sort([-1, 10, 10, 10, 4, 5, 6, 7, 8, 7, 1, -2, -10]))
-# print(counting_sort([2,0,2,1,1,0]))
-

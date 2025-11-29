@@ -10,6 +10,7 @@ def test_fibonacci(n, expected):
     assert fibo(n) == expected
     assert fibo_recursive(n) == expected
 
+
 def test_fibonacci_negative():
     with pytest.raises(NegativeNumberException):
         fibo_recursive(-1)
