@@ -1,21 +1,20 @@
 import random
+from functools import cmp_to_key
 
 import pytest
 
-from functools import cmp_to_key
-
-from src.cli import sort_cli, loop
-from src.exceptions import CmpAndKeyTogetherException
 from src.algorithms.bubble_sort import bubble_sort
+from src.algorithms.bucket_sort import bucket_sort
 from src.algorithms.heap_sort import heap_sort
 from src.algorithms.quick_sort import quick_sort
-from src.algorithms.bucket_sort import bucket_sort
 from src.algorithms.radix_sort import radix_sort
+from src.cli import loop
+from src.constants import SORTS_NAMES
+from src.exceptions import CmpAndKeyTogetherException
 from src.exceptions import NegativeNumberException
-from src.constants import SORTS, SORTS_NAMES
-from src.generators.rand_float_array import rand_float_array
 from src.generators.many_duplicates import many_duplicates
 from src.generators.nearly_sorted import nearly_sorted
+from src.generators.rand_float_array import rand_float_array
 from src.generators.rand_int_array import rand_int_array
 from src.generators.reverse_sorted import reverse_sorted
 

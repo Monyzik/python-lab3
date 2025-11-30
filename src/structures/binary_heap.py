@@ -12,6 +12,11 @@ class BinaryHeap:
         self.build()
 
     def shift_down(self, i: int) -> None:
+        """
+        'Проталкивает' элемент кучи, создавая правильный порядок внутри кучи.
+        :param i: Индекс элемента в куче.
+        :return: Ничего не возвращает.
+        """
         while 2 * i + 1 < self.size:
             l = i * 2 + 1
             r = i * 2 + 2
@@ -24,6 +29,10 @@ class BinaryHeap:
             i = j
 
     def extract(self):
+        """
+        Извлекает элемент из корня.
+        :return: Возвращает корень бинарной кучи.
+        """
         element = self.heap[0]
         self.heap[0] = self.heap[-1]
         self.size -= 1
@@ -31,6 +40,10 @@ class BinaryHeap:
         self.shift_down(0)
         return element
 
-    def build(self):
+    def build(self) -> None:
+        """
+        Создает правильную бинарную кучу.
+        :return: Ничего не возвращает.
+        """
         for i in range(self.size // 2, -1, -1):
             self.shift_down(i)

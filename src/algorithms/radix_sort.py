@@ -12,10 +12,10 @@ def radix_sort(a: list[int], base: int = 10) -> list[int]:
         raise NegativeNumberException(radix_sort)
     if base == 1:
         raise ValueError("Невозможно выполнить radix_sort по основанию 1")
-    maximum = max(a)
+    minimum, maximum = min(a), max(a)
     p = 1
     digits_plus, digits_minus = [[] for _ in range(base)], [[] for _ in range(base)]
-    while maximum // p > 0:
+    while maximum // p > 0 or abs(minimum) // p > 0:
         for x in a:
             if x >= 0:
                 digits_plus[(x // p) % base].append(x)
@@ -26,4 +26,3 @@ def radix_sort(a: list[int], base: int = 10) -> list[int]:
         digits_plus, digits_minus = [[] for _ in range(base)], [[] for _ in range(base)]
 
     return a
-

@@ -4,6 +4,13 @@ from src.exceptions import NegativeNumberException
 
 
 def nearly_sorted(n: int, swaps: int, *, seed=None) -> list[int]:
+    """
+    Генерирует почти отсортированный массив с swaps перестановками.
+    :param n: Размер массива.
+    :param swaps: Количество перестановок.
+    :param seed: Параметр генерации.
+    :return: Возвращает почти отсортированный массив с swaps перестановками.
+    """
     if n < 0:
         raise NegativeNumberException(nearly_sorted)
     if seed is not None:

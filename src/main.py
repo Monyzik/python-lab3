@@ -1,4 +1,4 @@
-from cli import loop
+from src.cli import loop
 
 
 def main() -> None:
